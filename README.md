@@ -1,93 +1,104 @@
-# Python Sort Method Demo
+# Bubble Sort in Python (Descending Version)
 
-Professional, beginner-friendly demonstration of sorting numeric input using Python's built-in `list.sort()` method.
+A clean and intuitive implementation of Bubble Sort that arranges numbers in descending order (largest to smallest).
 
 ## Overview
 
-This small tool reads numbers from user input, stores them in a list, and sorts them in ascending order with Python's native sorting engine.
+This project demonstrates:
+- Interactive input from the console
+- Manual sorting logic (Bubble Sort)
+- Descending-order arrangement
+- Basic swap counting during sorting
 
-It is ideal for:
-- Learning how `list.sort()` works in practice
-- Understanding input-to-output data flow in a console app
-- Comparing built-in sorting against manual algorithms (like Bubble Sort)
+It is perfect for students and early developers who want to deeply understand how sorting works step by step.
 
-## Why `list.sort()`
+## Ascending vs Descending (Core Idea)
 
-Python's built-in sort is:
-- Fast and production-ready
-- In-place (modifies the existing list)
-- Stable (preserves order of equal elements)
-- Suitable for most real-world sorting tasks
+Your first version (ascending) uses this condition:
 
-## Project Files
+```python
+if my_list[i] > my_list[i + 1]:
+```
+
+Your second version (descending) uses:
+
+```python
+if my_list[i] < my_list[i + 1]:
+```
+
+That single operator change (`>` to `<`) flips the sorting direction.
+
+## Project Structure
 
 ```
 .
-|-- theSort.py
+|-- bubbleSort.py
 |-- README.md
 ```
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.x
 
-## Run the Program
+## Run
 
 From the project folder:
 
 ```bash
-py theSort.py
+py bubbleSort.py
 ```
 
-## Example Execution
+## Example Run (Descending)
 
 ```text
-How many elements do you want to sort: 5
-Enter a list element: 8
+How many elements do you want to sort: 6
+Enter a list element: 4
+Enter a list element: 7
 Enter a list element: 1
-Enter a list element: 3
-Enter a list element: 2
 Enter a list element: 9
+Enter a list element: 3
+Enter a list element: 6
 
 Sorted:
-[1.0, 2.0, 3.0, 8.0, 9.0]
-1 comparisons
+[9.0, 7.0, 6.0, 4.0, 3.0, 1.0]
+9 comparisons
 ```
 
-## How It Works
+## How the Algorithm Works
 
-1. Ask for total number of elements.
-2. Read each numeric input (`float`).
-3. Append values to a list.
-4. Call `my_list.sort()`.
-5. Print sorted output.
+1. Read the number of values.
+2. Collect each value into a list.
+3. Keep looping while swaps are happening.
+4. Compare neighboring elements.
+5. Swap them when left is smaller than right (for descending order).
+6. Stop when no swaps occur in a full pass.
 
-## Complexity Notes
+## Complexity
 
-Python uses Timsort internally for `list.sort()`.
+- Best case: O(n) (already in descending order, early stop)
+- Average case: O(n^2)
+- Worst case: O(n^2)
+- Space complexity: O(1) extra space
 
-- Time: O(n log n) average and worst case
-- Best case: can approach O(n) on partially ordered data
-- Space: efficient in practice, implementation-managed
+## Important Note About the Counter
 
-## Important Note About Counter
+In this script, `counter` is increased when a swap happens.
 
-In the current script, `counter` is incremented once before sorting and printed as "comparisons".
+So the output label "comparisons" is not technically accurate.
 
-This means:
-- It is not counting actual comparisons.
-- It currently behaves as a placeholder value.
+More accurate labels would be:
+- `swaps`
+- `swap operations`
 
-If you want, this can be replaced with meaningful metrics (e.g., number of elements, elapsed time, or custom comparison tracking using another approach).
+## Professional Improvements You Can Add
 
-## Possible Improvements
-
-- Add input validation (`try/except`) to handle invalid numbers.
-- Support descending sorting via `my_list.sort(reverse=True)`.
-- Wrap logic in functions for cleaner structure and easier testing.
-- Add unit tests for empty input, duplicates, negatives, and decimal values.
+- Rename the final print to `swaps` for correctness.
+- Add input validation with `try/except`.
+- Move logic into reusable functions for testability.
+- Add optional mode selection (`ascending` or `descending`).
+- Add unit tests for duplicates, negatives, and decimal values.
 
 ## License
 
-For educational and personal use.
-
+Educational and personal use.
+# Bubble_Sort_With_Python_2
